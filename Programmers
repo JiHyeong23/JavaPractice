@@ -1,0 +1,20 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for(int i = 1; i < n+1; i++) {
+            answer++;
+            if(answer % 3 == 0) answer++;
+            if(Integer.toString(answer).contains("3")) {
+                boolean flag = true;
+
+                while(true) {
+                    flag = Integer.toString(answer).contains("3");
+                    if(flag) answer++;
+                    if(answer % 3 == 0) answer++;
+                    if(!flag) break;
+                }
+            }
+        }
+        return answer;
+    }
+}
